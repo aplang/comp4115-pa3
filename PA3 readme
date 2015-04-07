@@ -1,0 +1,83 @@
+Alison Lang
+PA 3
+
+I apologize for this long text file file but I couldn't get my word document to upload to github.
+I am aware that this programming assignment is incomplete. As a non-computer science major who has never programmed in C/C++ I had a very hard time with this assignment. The C compiler I downloaded with windows wasn’t working right so I opted to just record my steps below in hopes of getting some partial credit. I also had trouble saving my sql statements. 
+
+1. mysql> create function exp2(value1 int value2 int) returns int(10)
+	Set answer := value1*value2
+	Return answer;
+Mysql>select exp2(2,3)’
++----------+
+| exp2(2,3)|
++----------+
+|6              |
++----------+
+1 row in set (0.01 sec)
+
+2.
+Ld_libray_path=$home/lib
+Export ld_library_path
+Gcc –shared –o area.so area.cpp
+
+#ifdef STANDARD
+/* STANDARD is defined. Don't use any MySQL functions */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#ifdef __WIN__
+typedef unsigned __int64 ulonglong;     /* Microsoft's 64 bit types */
+typedef __int64 longlong;
+#else
+typedef unsigned long long ulonglong;
+typedef long long longlong;
+#endif /*__WIN__*/
+#else
+#include <my_global.h>
+#include <my_sys.h>
+#endif
+#include <mysql.h>
+#include <ctype.h>
+static pthread_mutex_t LOCK_hostname;
+
+#ifdef standard
+#include <radius.h>
+Extern “C” double  area(udf_init *initid, udf_args *args,char *is_null, char *error);
+Longlong * I = new longlong
+*I = radius*radius*3.14
+Return i
+Mysql> create function area(radius double)
+	Returns double
+	Soname “area_udf.so”;
+
+3.
+Delimiter ;
+Create procedure names (in first_name varchar(100), out first_name varchar(100), out last_name varchar(100))
+Begin
+		Select first_name, last_name from employees
+		Where last_name = “Bouloucos”
+	End;
+Call names();
+
+Delimiter ;
+Create procedure salary (in dept_no varchar(4) from dept_emp, out avg varchar(20))
+	Begin
+		Select avg(salaries.salary) as avg_salary
+		From salaries
+		Join dept)no on salaries.emp_no = dept_no.emp_no
+		Group by dept_no;
+	End
+	Call salary();
+
+Delimiter ;
+Create Procedure gender (In genderinput enum(‘M’, ‘F’) out int(100))
+	Begin
+		
+		IF genderinput = “F” then Select count(*) as totF from employees where (((employees.gender)=”F”)
+		Return totF;
+		IF genderinput = “M” then Select count(*) as totM from employees where (((employees.gender)=”M”)
+		Return totM;
+
+
+
+
